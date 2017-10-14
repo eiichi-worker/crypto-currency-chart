@@ -18,7 +18,7 @@
     <link href="/coreui/css/style.css" rel="stylesheet">
 </head>
 
-<body class="app header-fixed sidebar-fixed aside-menu-fixed aside-menu-hidden sidebar-minimized">
+<body class="app header-fixed sidebar-fixed aside-menu-fixed aside-menu-hidden">
     <header class="app-header navbar">
         <button class="navbar-toggler mobile-sidebar-toggler d-lg-none mr-auto" type="button">☰</button>
         <button class="navbar-toggler sidebar-minimizer d-md-down-none" type="button">☰</button>
@@ -31,8 +31,7 @@
             <nav class="sidebar-nav">
                 <ul class="nav">
                     <li class="nav-item">
-                        <a class="nav-link" href="/">
-                            <i class="icon-speedometer"></i> Dashboard</a>
+                        <a class="nav-link" href="/"><i class="icon-speedometer"></i> Dashboard</a>
                     </li>
                 </ul>
             </nav>
@@ -40,65 +39,46 @@
 
         <main class="main">
             <ol class="breadcrumb">
-                <li class="breadcrumb-item active">Dashboard</li>
+                <li class="breadcrumb-item active">Admin</li>
             </ol>
 
             <div class="container-fluid">
-                <div class="alert alert-warning alert-dismissible fade show" role="alert">
-                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                    当サイトの内容の正確性、信頼性等を保証するものではありません。
-                    <br> 当サイトの情報に基づいて被ったいかなる損害についても、当サイトの管理者及び情報提供者は一切の責任を負いません。
-                    <br> 投資に関するすべての決定は、利用者ご自身の判断でなさるようにお願いいたします。
-                </div>
-
                 <div class="animated fadeIn">
-
                     <div class="card">
                         <div class="card-body">
-                            <div class="row">
-                                <div class="col-sm-5">
-                                    <h4 class="card-title mb-0">Bitcoin (BTC)</h4>
-                                    <div class="small text-muted">BTC / USD</div>
-                                </div>
-                            </div>
-
-                            <div class="chart-wrapper" style="height:300px;margin-top:40px;">
-                                <canvas id="chart-btc" class="chart" height="300"></canvas>
-                            </div>
+                           <a href="admin/update">Update</a>
                         </div>
+                        <div id="slider" style="margin-left:50px"></div>
                     </div>
-
                 </div>
-
-
             </div>
         </main>
     </div>
 
     <footer class="app-footer">
         © 2017 暗号通貨(仮想通貨)チャート置き場.
-        <span class="float-right">Powered by
-            <a href="http://coreui.io">CoreUI</a>
+        <span class="float-right">Powered by <a href="http://coreui.io">CoreUI</a>
         </span>
     </footer>
 
     <!-- Bootstrap and necessary plugins -->
     <script src="/coreui/bower_components/jquery/dist/jquery.min.js"></script>
-    <script src="/coreui/bower_components/popper.js/index.js"></script>
+    <!-- <script src="/coreui/bower_components/popper.js/dist/popper.js"></script> -->
     <script src="/coreui/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
     <script src="/coreui/bower_components/pace/pace.min.js"></script>
 
 
     <!-- Plugins and scripts required by all views -->
-    <script src="/coreui/bower_components/chart.js/dist/Chart.min.js"></script>
+    <!-- <script src="/coreui/bower_components/chart.js/dist/Chart.min.js"></script> -->
 
-    <link href="https://cdn.jsdelivr.net/npm/chart.js-rangeslider@1.2.1/dist/RangeSlider-all.min.css" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/chart.js-rangeslider@1.2.1/dist/RangeSlider-all.min.js"></script>
 
     <!-- GenesisUI main scripts -->
+
     <script src="/coreui/js/app.js"></script>
+
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jQRangeSlider/5.7.2/jQEditRangeSlider.min.js"></script>
+
 
     <!-- Plugins and scripts required by this views -->
 
@@ -107,8 +87,8 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
 
-    <script src="https://www.gstatic.com/charts/loader.js"></script>
-    <script src="js/charts.js"></script>
+   <script src="https://www.gstatic.com/charts/loader.js"></script>
+   <!-- <script src="js/charts.js"></script> -->
 
 </body>
 

@@ -4,10 +4,11 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+var basicAuth = require('basic-auth-connect');
 
-var index = require('./routes/index');
-var users = require('./routes/users');
-var admin_update = require('./routes/admin/update');
+// ルーティング
+var routesIndex = require('./routes/index');
+var routesAdmin = require('./routes/admin');
 
 var app = express();
 
@@ -23,10 +24,12 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', index);
-app.use('/users', users);
-app.use('/admin', admin_update);
+app.use('/', routesIndex);
+app.use('/admin', routesAdmin);
 
+app.all('/admin/*', basicAuth(function(user, password) {
+  return user === 'neko' && password === 'neko';
+}));
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   var err = new Error('Not Found');
